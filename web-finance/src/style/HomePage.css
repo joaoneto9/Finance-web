@@ -1,0 +1,10 @@
+.introduction-box {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    padding: auto;
+}
+
+.introduction-box .introduction-title {
+    font-size: 25px;
+}
