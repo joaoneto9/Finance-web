@@ -1,25 +1,25 @@
 import './style/App.css'
+import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import BrowserRouterComponent from './components/BrowserRouterComponent'
+
+
 function App() {
 
   return (
     <>
-        <BrowserRouter>
-            <nav>
-                <Link to="/login">Login</Link> | {" "}
-                <Link to="/home">home</Link> | {" "}
-                <Link to="/register">Register</Link> 
-            </nav>
-
-            <Routes>
-                <Route path='/login'element={<LoginPage />}/>
-                <Route path='/home'element={<HomePage name={"João Neto"} />}/>
-                <Route path='/register'element={<RegisterPage />}/>
-            </Routes>
-       </BrowserRouter>
+        <Header />
+        <BrowserRouterComponent  
+            pages={
+                [
+                    {name: "Login", reactPage: <LoginPage/>},
+                    {name: "Register", reactPage: <RegisterPage />},
+                    {name: "Home", reactPage: <HomePage name='João'/>},
+                    {name: "", reactPage: <LoginPage />}
+                ]
+            } />
     </>
   )
 }

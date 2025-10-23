@@ -13,7 +13,6 @@ function HomePage({name}: props) {
 
     return (
         <>
-            <Header />
             <div className="introduction-box">
                 <h3 className="introduction-title">Olá, {name}!</h3>
             </div>

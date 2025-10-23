@@ -5,7 +5,6 @@ function RegisterPage() {
 
     return (
         <>  
-            <Header />
             <UserInformationBox title={"Register"} 
                 fields={["username", "Email", "Password", "Confirm Password"]}/>
         </>

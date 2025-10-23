@@ -4,9 +4,7 @@ import UserInformationBox from "../components/UserInformationBox";
 function LoginPage() {
 
     return (
-        <>  
-            <Header />
-            
+        <>    
             <UserInformationBox title={"Login"} 
                 fields={["Email", "Password"]}/>
         </>
