@@ -1,18 +1,33 @@
-import type { ReactNode } from "react"
+import { type ReactNode } from "react"
 import "../style/UserInformationBox.css"
+
 
 interface props {
     title: string;
-    fields: string[]
+    fields: string[];
+    setUserLogin: React.Dispatch<React.SetStateAction<Map<String, any> | null>>;
 }
 
-function UserInformationBox({title, fields}: props) {
+function UserInformationBox({title, fields, setUserLogin}: props) {
+
+
+    const sendUsersInformations = () => {
+        const inputs = document.querySelectorAll<HTMLInputElement>(".input-field");
+        const userData: Map<String, any> = new Map<String, any>();
+
+        inputs.forEach(input => {
+            userData.set(input.name, input.value);
+        });
+
+
+        setUserLogin(userData);
+    } 
 
     const fieldsHtml = (): ReactNode  => {
         return fields.map(field => (
             <div className="field-container">
                 <p className="field-name">{field}</p>
-                <input type="text" name={"input-field-" + field} id="input-field"/>
+                <input type="text" name={field.toLowerCase()} className="input-field"/>
             </div>
         ))
     }
@@ -23,7 +38,7 @@ function UserInformationBox({title, fields}: props) {
                 <div className="fields-container">
                     <h3 className="user-informations-box-title">{title}</h3>
                     {fieldsHtml()}
-                    <button className="submit-button">Submit</button>
+                    <button className="submit-button" onClick={sendUsersInformations}>Submit</button>
                 </div>
             </div>
         </>

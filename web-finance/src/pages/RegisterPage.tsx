@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import UserInformationBox from "../components/UserInformationBox";
 
 function RegisterPage() {

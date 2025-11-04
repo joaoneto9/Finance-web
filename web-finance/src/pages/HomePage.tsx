@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import DataInfoBox from "../components/DataInfoBox";
 import "../style/HomePage.css"
 
