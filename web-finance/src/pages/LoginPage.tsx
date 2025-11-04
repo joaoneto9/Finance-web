@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import UserInformationBox from "../components/UserInformationBox";
+import loginPost from "../requests/loginUserPost";
 
 function LoginPage() {
 
@@ -8,7 +9,12 @@ function LoginPage() {
 
     // realiza o login quando o userLoginData for alterado
     useEffect(() => {
-        console.log(userLoginData);
+        const data = {
+            email: userLoginData?.get("email"),
+            password: userLoginData?.get("password")
+        }
+        
+        loginPost(data);
     }, [userLoginData]);
 
     return (
