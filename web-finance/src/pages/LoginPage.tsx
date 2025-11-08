@@ -13,14 +13,26 @@ function LoginPage() {
             email: userLoginData?.get("email"),
             password: userLoginData?.get("password")
         }
-        
-        loginPost(data);
+
+        const saveUsersCredential = async () => {
+            const userLogin = await loginPost(data);
+
+            if (userLogin == undefined)
+                return;
+
+            sessionStorage.setItem('token', userLogin.token);
+            sessionStorage.setItem('username', userLogin.username);
+
+            window.location.href = "http://localhost:5173/Home"
+        };
+
+        saveUsersCredential();
     }, [userLoginData]);
 
     return (
         <>    
             <UserInformationBox title={"Login"} 
-                fields={["Email", "Password"]} setUserLogin={setUserLoginData}/>
+                fields={["Email", "Password"]} setUserData={setUserLoginData}/>
         </>
     );
 }

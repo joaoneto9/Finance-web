@@ -5,10 +5,10 @@ import "../style/UserInformationBox.css"
 interface props {
     title: string;
     fields: string[];
-    setUserLogin: React.Dispatch<React.SetStateAction<Map<String, any> | null>>;
+    setUserData: React.Dispatch<React.SetStateAction<Map<String, any> | null>>;
 }
 
-function UserInformationBox({title, fields, setUserLogin}: props) {
+function UserInformationBox({title, fields, setUserData}: props) {
 
 
     const sendUsersInformations = () => {
@@ -19,8 +19,7 @@ function UserInformationBox({title, fields, setUserLogin}: props) {
             userData.set(input.name, input.value);
         });
 
-
-        setUserLogin(userData);
+        setUserData(userData);
     } 
 
     const fieldsHtml = (): ReactNode  => {

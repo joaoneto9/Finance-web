@@ -22,7 +22,8 @@ const loginPost = async ({email, password}: loginBody) => {
     }
 
     const result = await response.json();
-    console.log(result);
+    
+    return result
 }
 
 export default loginPost;

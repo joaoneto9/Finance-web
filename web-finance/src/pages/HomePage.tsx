@@ -2,7 +2,7 @@ import DataInfoBox from "../components/DataInfoBox";
 import "../style/HomePage.css"
 
 interface props {
-    name: string;
+    name: string | null;
 }
 
 function HomePage({name}: props) {

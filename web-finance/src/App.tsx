@@ -16,7 +16,7 @@ function App() {
                 [
                     {name: "Login", reactPage: <LoginPage/>},
                     {name: "Register", reactPage: <RegisterPage />},
-                    {name: "Home", reactPage: <HomePage name='João'/>},
+                    {name: "Home", reactPage: <HomePage name={sessionStorage.getItem('username')}/>},
                     {name: "", reactPage: <LoginPage />}
                 ]
             } />
