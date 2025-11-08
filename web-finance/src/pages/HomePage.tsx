@@ -1,4 +1,3 @@
-import DataInfoBox from "../components/DataInfoBox";
 import "../style/HomePage.css"
 
 interface props {
@@ -15,7 +14,6 @@ function HomePage({name}: props) {
             <div className="introduction-box">
                 <h3 className="introduction-title">Olá, {name}!</h3>
             </div>
-            <DataInfoBox title={"Gasto Mensal"} contentData={map}></DataInfoBox>
         </>
     );
 }

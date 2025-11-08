@@ -7,8 +7,10 @@ function RegisterPage() {
     const [userRegister, setUserRegister] = useState<Map<String, any> | null>(null);
 
     useEffect(() => {
-        const password = userRegister?.get('password');
-        const confirmPassword = userRegister?.get('confirm password')
+        if (!userRegister) return;
+
+        const password = userRegister.get('password');
+        const confirmPassword = userRegister.get('confirm password')
 
         if (password != confirmPassword) {
             alert("erro, confirme a senha digitada anteriomente");
@@ -16,8 +18,8 @@ function RegisterPage() {
         }
 
         const data = {
-            username: userRegister?.get('username'),
-            email: userRegister?.get('email'),
+            username: userRegister.get('username'),
+            email: userRegister.get('email'),
             password: password
         }
 

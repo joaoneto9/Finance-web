@@ -1,6 +1,5 @@
 import type { JSX, ReactNode } from "react";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import "../style/BrowserRouter.css"
 
 interface page {
     name: string,
@@ -16,7 +15,6 @@ function BrowserRouterComponent({pages}: props) {
         return pages.map((page: page) => ( 
             <>
                 <Link to={`/${page.name}`}> {page.name} </Link>
-                <br/>
             </>
         ))
     }
@@ -31,11 +29,9 @@ function BrowserRouterComponent({pages}: props) {
 
     return (
         <BrowserRouter>
-            <div className="browser-routes-container">
-                <nav>
-                    {links()}
-                </nav>
-            </div>             
+            <nav>
+                {links()}
+            </nav>
             
             <Routes>
                 {routes()}
