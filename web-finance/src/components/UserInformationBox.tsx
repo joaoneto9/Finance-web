@@ -24,7 +24,7 @@ function UserInformationBox({title, fields, setUserData}: props) {
 
     const fieldsHtml = (): ReactNode  => {
         return fields.map(field => (
-            <div className="field-container">
+            <div key={field} className="field-container">
                 <p className="field-name">{field}</p>
                 <input type="text" name={field.toLowerCase()} className="input-field"/>
             </div>

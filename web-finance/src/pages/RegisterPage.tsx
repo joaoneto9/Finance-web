@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import UserInformationBox from "../components/UserInformationBox";
 import registerPost from "../requests/registerUserPost";
+import NavBrowser from "../components/NavBrowser";
 
 function RegisterPage() {
 
@@ -40,8 +41,12 @@ function RegisterPage() {
     return (
         <>  
             <UserInformationBox title={"Register"} 
-                fields={["username", "Email", "Password", "Confirm Password"]}
+                fields={["Username", "Email", "Password", "Confirm Password"]}
                 setUserData={setUserRegister}/>
+            <NavBrowser links={
+                ['login']
+            }/>
+                
         </>
     );
 }

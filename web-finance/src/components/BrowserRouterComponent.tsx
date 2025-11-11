@@ -11,27 +11,17 @@ interface props {
 }
 
 function BrowserRouterComponent({pages}: props) {
-    const links = (): ReactNode => {
-        return pages.map((page: page) => ( 
-            <>
-                <Link to={`/${page.name}`}> {page.name} </Link>
-            </>
-        ))
-    }
 
     const routes = (): ReactNode => {
         return pages.map((page: page) => (
             <>
-                <Route path={page.name} element={page.reactPage}/>
+                <Route path={page.name.toLowerCase()} element={page.reactPage}/>
             </>
         ))
     }
 
     return (
         <BrowserRouter>
-            <nav>
-                {links()}
-            </nav>
             
             <Routes>
                 {routes()}
