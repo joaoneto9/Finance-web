@@ -43,9 +43,9 @@ function RegisterPage() {
             <UserInformationBox title={"Register"} 
                 fields={["Username", "Email", "Password", "Confirm Password"]}
                 setUserData={setUserRegister}/>
-            <NavBrowser links={
-                ['login']
-            }/>
+            <NavBrowser contents={[
+                {link: '', name: 'login'}
+            ]}/>
                 
         </>
     );

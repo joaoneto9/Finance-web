@@ -1,24 +1,24 @@
 import './style/App.css'
 import Header from './components/Header'
-import BrowserRouterComponent from './components/BrowserRouterComponent'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
-import RegisterPage from './pages/RegisterPage'
 import HomePage from './pages/HomePage'
+import RegisterPage from './pages/RegisterPage'
+
 
 function App() {
+
 
   return (
     <>
         <Header />
-        <BrowserRouterComponent
-            pages={
-                [
-                    {name: "Login", reactPage: <LoginPage/>},
-                    {name: "Register", reactPage: <RegisterPage />},
-                    {name: "Home", reactPage: <HomePage name={sessionStorage.getItem('username')}/>}
-                ]
-            } 
-        />    
+        <BrowserRouter>
+            <Routes>
+                <Route path='register' element=<RegisterPage/> />
+                <Route path='home' element=<HomePage name={sessionStorage.getItem('username')} /> />
+                <Route path='' element=<LoginPage/> />
+            </Routes>
+        </BrowserRouter>  
     </>
   )
 }

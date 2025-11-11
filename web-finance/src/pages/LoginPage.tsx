@@ -40,9 +40,9 @@ function LoginPage() {
                 title={"Login"} 
                 fields={["Email", "Password"]} setUserData={setUserLoginData}
             />
-            <NavBrowser links={
-                ['register']
-            }/>
+            <NavBrowser contents={[
+                {link: 'register', name: 'register'}
+            ]}/>
         </>
 
     );

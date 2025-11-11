@@ -3,15 +3,20 @@ import { Link } from "react-router-dom"
 import "../style/NavBrowser.css"
 import React from "react"
 
-interface props {
-    links: string[]
+interface content {
+    name: string,
+    link: string
 }
 
-function NavBrowser({links}: props) {
+interface props {
+    contents: content[]
+}
+
+function NavBrowser({contents}: props) {
     const navContent = (): ReactNode => {
-        return links.map((name: string) => ( 
-            <React.Fragment key={name}>
-                <Link className="link" to={`/${name}`}>{name}</Link>
+        return contents.map((content: content) => ( 
+            <React.Fragment key={content.name}>
+                <Link className="link" to={`/${content.link}`}>{content.name}</Link>
             </React.Fragment>
         ))
     }
